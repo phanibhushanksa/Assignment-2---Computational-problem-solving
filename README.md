@@ -108,7 +108,11 @@ namespace Assignment2_DIS_Spring2021
         ///Output: [1,2,1,2]
         /// </summary>
 
-                    public class Solution
+        private static void ShuffleArray(int[] nums, int n)
+        {
+            try
+            {
+                 public class Solution
         {
             public int[] Shuffle(int[] nums, int n)
             {
@@ -134,7 +138,15 @@ namespace Assignment2_DIS_Spring2021
         }
 
     }
-            
+
+}
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         //Question 2:
         /// <summary>
         /// Write a method to move all 0's to the end of the given array. You should maintain the relative order of the non-zero elements. 
@@ -144,8 +156,11 @@ namespace Assignment2_DIS_Spring2021
         /// Output: [1,3,12,0,0]
         /// </summary>
 
-  
-               public class Solution
+        private static void MoveZeroes(int[] ar2)
+        {
+            try
+            {
+                public class Solution
 {
     public void MoveZeroes(int[] nums)
     {
@@ -177,7 +192,15 @@ namespace Assignment2_DIS_Spring2021
 }
 
             }
-            
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
 
         //Question 3
         /// <summary>
@@ -194,7 +217,10 @@ namespace Assignment2_DIS_Spring2021
         ///Constraints: time complexity should be O(n).
         /// </summary>
 
-    
+        private static void CoolPairs(int[] nums)
+        {
+            try
+            {
                 public class Solution
 {
     public int NumIdenticalPairs(int[] nums)
@@ -220,7 +246,13 @@ namespace Assignment2_DIS_Spring2021
         return res;
     }
 }
-            
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
 
         //Question 4:
         /// <summary>
@@ -239,7 +271,10 @@ namespace Assignment2_DIS_Spring2021
         ///Output: [0,1]
         ///Constraints: Time complexity should be O(n)
         /// </summary>
-      
+        private static void TwoSum(int[] nums, int target)
+        {
+            try
+            {
                 public class Solution
 {
     public int[] TwoSum(int[] nums, int target)
@@ -259,7 +294,15 @@ namespace Assignment2_DIS_Spring2021
     }
 }
 
-           
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+
         //Question 5:
         /// <summary>
         /// Given a string s and an integer array indices of the same length.
@@ -277,8 +320,11 @@ namespace Assignment2_DIS_Spring2021
         ///Input: s = "ockry", indices = [1, 2, 3, 0, 4]
         ///Output: "rocky"
         /// </summary>
-       
-            public class Solution
+        private static void RestoreString(string s, int[] indices)
+        {
+            try
+            {
+                 public class Solution
 {
     public string RestoreString(string s, int[] indices)
     {
@@ -296,7 +342,14 @@ namespace Assignment2_DIS_Spring2021
     }
 }
 
-          
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         //Question 6
         /// <summary>
         /// Determine whether two give strings s1 and s2, are isomorphic.
@@ -315,8 +368,11 @@ namespace Assignment2_DIS_Spring2021
         ///Input : s1 = “ab” s2 = “aa”
         ///Output: False
         /// </summary>
-        
-                public class Solution
+        private static bool Isomorphic(string s1, string s2)
+        {
+            try
+            {
+                  public class Solution
 {
     public bool IsIsomorphic(string s, string t)
     {
@@ -338,6 +394,14 @@ namespace Assignment2_DIS_Spring2021
         return true;
     }
 }
+                return false;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
 
         //Question 7
         /// <summary>
@@ -360,8 +424,11 @@ namespace Assignment2_DIS_Spring2021
         /// 0 <= scorei <= 100
         /// For each IDi, there will be at least five scores.
         /// </summary>
-     
-                public class Solution
+        private static void HighFive(int[,] items)
+        {
+            try
+            {
+    public class Solution
 {
     public int[][] HighFive(int[][] items)
     {
@@ -381,33 +448,15 @@ namespace Assignment2_DIS_Spring2021
             }
         }
 
-        // now walk through the dict
-        var keys = dict.Keys;
-        var ans = new int[keys.Count][];
-        int i = 0;
-        foreach (var student in dict)
-        {
-            ans[i] = new int[2];
-            ans[i][0] = student.Key;
-            var sum = 0;
-            // sort the score and get the first 5
-            var temp = student.Value.ToArray();
-            Array.Sort(temp);
-            var k = 5;
-            for (int j = temp.Length - 1; j >= 0 && k > 0; j--)
-            {
-                //Console.WriteLine(temp[j]);
-                sum += temp[j];
-                k--;
-            }
-            ans[i][1] = sum / 5;
-            i++;
-        }
-        return ans;
-    }
-}
 
-       
+    }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
         //Question 8
         /// <summary>
         /// Write an algorithm to determine if a number n is happy.
@@ -431,8 +480,11 @@ namespace Assignment2_DIS_Spring2021
         ///1 <= n <= 231 - 1
         /// </summary>
 
-      
-                public class Solution
+        private static bool HappyNumber(int n)
+        {
+            try
+            {
+    public class Solution
 {
     public bool IsHappy(int n)
     {
@@ -455,7 +507,14 @@ namespace Assignment2_DIS_Spring2021
         return n == 1;
     }
 }
+                return false;
+            }
+            catch (Exception)
+            {
 
+                throw;
+            }
+        }
 
         //Question 9
         /// <summary>
@@ -474,7 +533,11 @@ namespace Assignment2_DIS_Spring2021
         ///Try to solve it in O(n) time complexity.
         /// </summary>
 
-               public class Solution
+        private static int Stocks(int[] prices)
+        {
+            try
+            {
+                 public class Solution
 {
     public int MaxProfit(int[] prices)
     {
@@ -505,6 +568,14 @@ namespace Assignment2_DIS_Spring2021
         return maxProfit < 0 ? 0 : maxProfit;
     }
 }
+                return 0;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
 
         //Question 10
         /// <summary>
@@ -527,8 +598,11 @@ namespace Assignment2_DIS_Spring2021
         ///Hint : Use the concept of Fibonacci series.
         /// </summary>
 
-    
-               public class Solution
+        private static void Stairs(int steps)
+        {
+            try
+            {
+                public class Solution
 {
     public int ClimbStairs(int n)
     {
@@ -564,4 +638,12 @@ namespace Assignment2_DIS_Spring2021
     }
 }
 
-     
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+    }
+}
