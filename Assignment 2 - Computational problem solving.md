@@ -111,10 +111,8 @@ namespace Assignment2_DIS_Spring2021
         private static void ShuffleArray(int[] nums, int n)
         {
             try
-            {
-                 public class Solution
-        {
-            public int[] Shuffle(int[] nums, int n)
+                  {
+           
             {
                 int[] m = new int[nums.Length];
                 int i = 0, k = nums.Length / 2;
@@ -135,11 +133,8 @@ namespace Assignment2_DIS_Spring2021
 
                 return m;
             }
-        }
-
+      
     }
-
-}
             catch (Exception)
             {
 
@@ -160,38 +155,33 @@ namespace Assignment2_DIS_Spring2021
         {
             try
             {
-                public class Solution
-{
-    public void MoveZeroes(int[] nums)
-    {
-        var z = 0;
-        var c = 1;
-        while (z < nums.Length)
-        {
-            if (nums[z] != 0 || c >= nums.Length)
-            {
-                z++;
-                c = z + 1;
-            }
-            else
-            {
-                if (nums[c] == 0)
                 {
-                    c++;
+                    var z = 0;
+                    var c = 1;
+                    while (z < nums.Length)
+                    {
+                        if (nums[z] != 0 || c >= nums.Length)
+                        {
+                            z++;
+                            c = z + 1;
+                        }
+                        else
+                        {
+                            if (nums[c] == 0)
+                            {
+                                c++;
+                            }
+                            else
+                            {
+                                nums[z] = nums[c];
+                                nums[c] = 0;
+                                z++;
+                                c = z + 1;
+                            }
+                        }
+                    }
                 }
-                else
-                {
-                    nums[z] = nums[c];
-                    nums[c] = 0;
-                    z++;
-                    c = z + 1;
-                }
-            }
-        }
-    }
-}
-
-            }
+            
 
             }
             catch (Exception)
@@ -221,31 +211,27 @@ namespace Assignment2_DIS_Spring2021
         {
             try
             {
-                public class Solution
-{
-    public int NumIdenticalPairs(int[] nums)
-    {
-        if (nums == null || nums.Length == 0)
-            return 0;
+                {
+                    if (nums == null || nums.Length == 0)
+                        return 0;
 
-        int res = 0;
-        Dictionary<int, int> dict = new Dictionary<int, int>();
+                    int res = 0;
+                    Dictionary<int, int> dict = new Dictionary<int, int>();
 
-        foreach (var num in nums)
-        {
-            if (!dict.ContainsKey(num))
-                dict.Add(num, 0);
+                    foreach (var num in nums)
+                    {
+                        if (!dict.ContainsKey(num))
+                            dict.Add(num, 0);
 
-            dict[num] += 1;
-        }
+                        dict[num] += 1;
+                    }
 
-        foreach (var item in dict.Values)
-            if (item != 1)
-                res += item * (item - 1) / 2;
+                    foreach (var item in dict.Values)
+                        if (item != 1)
+                            res += item * (item - 1) / 2;
 
-        return res;
-    }
-}
+                    return res;
+                }
             }
             catch (Exception)
             {
@@ -275,24 +261,20 @@ namespace Assignment2_DIS_Spring2021
         {
             try
             {
-                public class Solution
-{
-    public int[] TwoSum(int[] nums, int target)
-    {
-        Hashtable hm = new Hashtable();
-        for (int i = 0; i < nums.Count(); i++)
-        {
-            if (!hm.ContainsKey(nums[i]))
-                hm.Add(nums[i], i);
+                {
+                    Hashtable hm = new Hashtable();
+                    for (int i = 0; i < nums.Count(); i++)
+                    {
+                        if (!hm.ContainsKey(nums[i]))
+                            hm.Add(nums[i], i);
 
-            int compliment = target - nums[i];
-            if (hm.ContainsKey(compliment) && (int)hm[compliment] != i)
-                return new int[] { (int)hm[compliment], i };
-        }
+                        int compliment = target - nums[i];
+                        if (hm.ContainsKey(compliment) && (int)hm[compliment] != i)
+                            return new int[] { (int)hm[compliment], i };
+                    }
 
-        throw new ArgumentException("No two sum found");
-    }
-}
+                    throw new ArgumentException("No two sum found");
+                }
 
             }
             catch (Exception)
@@ -324,23 +306,19 @@ namespace Assignment2_DIS_Spring2021
         {
             try
             {
-                 public class Solution
-{
-    public string RestoreString(string s, int[] indices)
-    {
+                {
 
-        if (s == null || s == "")
-            return "";
+                    if (s == null || s == "")
+                        return "";
 
-        char[] arr = new char[s.Length];
-        for (int i = 0; i < s.Length; i++)
-        {
-            arr[indices[i]] = s[i];
-        }
+                    char[] arr = new char[s.Length];
+                    for (int i = 0; i < s.Length; i++)
+                    {
+                        arr[indices[i]] = s[i];
+                    }
 
-        return new string(arr);
-    }
-}
+                    return new string(arr);
+                }
 
             }
             catch (Exception)
@@ -368,32 +346,28 @@ namespace Assignment2_DIS_Spring2021
         ///Input : s1 = “ab” s2 = “aa”
         ///Output: False
         /// </summary>
-        private static bool Isomorphic(string s1, string s2)
+        private static bool Isomorphic(string s, string t )
         {
             try
             {
-                  public class Solution
-{
-    public bool IsIsomorphic(string s, string t)
-    {
-        if (s == null && t == null)
-            return true;
-        else if (s == null || t == null)
-            return false;
-        else if (s.Length != t.Length)
-            return false;
+                {
+                    if (s == null && t == null)
+                        return true;
+                    else if (s == null || t == null)
+                        return false;
+                    else if (s.Length != t.Length)
+                        return false;
 
-        int[] occuranceS = Enumerable.Repeat(-1, 256).ToArray(),
-              occuranceT = Enumerable.Repeat(-1, 256).ToArray();
-        for (int i = 0; i < s.Length; i++)
-        {
-            if (occuranceS[s[i]] != occuranceT[t[i]])
-                return false;
-            occuranceS[s[i]] = occuranceT[t[i]] = i;
-        }
-        return true;
-    }
-}
+                    int[] occuranceS = Enumerable.Repeat(-1, 256).ToArray(),
+                          occuranceT = Enumerable.Repeat(-1, 256).ToArray();
+                    for (int i = 0; i < s.Length; i++)
+                    {
+                        if (occuranceS[s[i]] != occuranceT[t[i]])
+                            return false;
+                        occuranceS[s[i]] = occuranceT[t[i]] = i;
+                    }
+                    return true;
+                }
                 return false;
             }
             catch (Exception)
@@ -428,28 +402,49 @@ namespace Assignment2_DIS_Spring2021
         {
             try
             {
-    public class Solution
-{
-    public int[][] HighFive(int[][] items)
-    {
-        var dict = new SortedDictionary<int, List<int>>();
-        foreach (var student in items)
-        {
-            var studentId = student[0];
-            var score = student[1];
-            if (dict.ContainsKey(studentId))
-            {
-                dict[studentId].Add(score);
-            }
-            else
-            {
-                dict[studentId] = new List<int>();
-                dict[studentId].Add(score);
-            }
-        }
+                {
+                    var dict = new SortedDictionary<int, List<int>>();
+                    foreach (var student in items)
+                    {
+                        var studentId = student[0];
+                        var score = student[1];
+                        if (dict.ContainsKey(studentId))
+                        {
+                            dict[studentId].Add(score);
+                        }
+                        else
+                        {
+                            dict[studentId] = new List<int>();
+                            dict[studentId].Add(score);
+                        }
+                    }
 
+                    // now walk through the dict
+                    var keys = dict.Keys;
+                    var ans = new int[keys.Count][];
+                    int i = 0;
+                    foreach (var student in dict)
+                    {
+                        ans[i] = new int[2];
+                        ans[i][0] = student.Key;
+                        var sum = 0;
+                        // sort the score and get the first 5
+                        var temp = student.Value.ToArray();
+                        Array.Sort(temp);
+                        var k = 5;
+                        for (int j = temp.Length - 1; j >= 0 && k > 0; j--)
+                        {
+                            //Console.WriteLine(temp[j]);
+                            sum += temp[j];
+                            k--;
+                        }
+                        ans[i][1] = sum / 5;
+                        i++;
+                    }
+                    return ans;
+                }
 
-    }
+            }
             catch (Exception)
             {
 
@@ -484,29 +479,25 @@ namespace Assignment2_DIS_Spring2021
         {
             try
             {
-    public class Solution
-{
-    public bool IsHappy(int n)
-    {
-        var hashset = new HashSet<int>();
+                {
+                    var hashset = new HashSet<int>();
 
-        while (!hashset.Contains(n) && n != 1)
-        {
-            hashset.Add(n);
-            var newNum = 0;
+                    while (!hashset.Contains(n) && n != 1)
+                    {
+                        hashset.Add(n);
+                        var newNum = 0;
 
-            while (n != 0)
-            {
-                newNum = newNum + (int)Math.Pow(n % 10, 2);
-                n = n / 10;
-            }
+                        while (n != 0)
+                        {
+                            newNum = newNum + (int)Math.Pow(n % 10, 2);
+                            n = n / 10;
+                        }
 
-            n = newNum;
-        }
+                        n = newNum;
+                    }
 
-        return n == 1;
-    }
-}
+                    return n == 1;
+                }
                 return false;
             }
             catch (Exception)
@@ -537,37 +528,33 @@ namespace Assignment2_DIS_Spring2021
         {
             try
             {
-                 public class Solution
-{
-    public int MaxProfit(int[] prices)
-    {
-        if (prices.Length <= 1)
-        {
-            return 0;
-        }
-        int maxProfit = Int32.MinValue;
-        int i = prices.Length - 1;
-        Stack<int> tracker = new Stack<int>();
-        while (i >= 0)
-        {
-            while (tracker.Count != 0 && prices[i] > tracker.Peek())
-            { //always save the maxValue available value on top of stack
-                tracker.Pop();
-            }
-            if (tracker.Count == 0)
-            {
-                tracker.Push(prices[i]);
-            }
-            else
-            {
-                maxProfit = Math.Max(tracker.Peek() - prices[i], maxProfit);//Check the maxProfit with the current difference
-            }
-            i--;
-        }
+                {
+                    if (prices.Length <= 1)
+                    {
+                        return 0;
+                    }
+                    int maxProfit = Int32.MinValue;
+                    int i = prices.Length - 1;
+                    Stack<int> tracker = new Stack<int>();
+                    while (i >= 0)
+                    {
+                        while (tracker.Count != 0 && prices[i] > tracker.Peek())
+                        { //always save the maxValue available value on top of stack
+                            tracker.Pop();
+                        }
+                        if (tracker.Count == 0)
+                        {
+                            tracker.Push(prices[i]);
+                        }
+                        else
+                        {
+                            maxProfit = Math.Max(tracker.Peek() - prices[i], maxProfit);//Check the maxProfit with the current difference
+                        }
+                        i--;
+                    }
 
-        return maxProfit < 0 ? 0 : maxProfit;
-    }
-}
+                    return maxProfit < 0 ? 0 : maxProfit;
+                }
                 return 0;
             }
             catch (Exception)
@@ -602,41 +589,7 @@ namespace Assignment2_DIS_Spring2021
         {
             try
             {
-                public class Solution
-{
-    public int ClimbStairs(int n)
-    {
-        int combinationCreator = 0;
-        int counter = 1;
-        for (int i = 1; i <= n / 2; i++)
-        {
-            if (2 * i == n)
-            {
-                counter++;
-                break;
-            }
-            else if (2 * i < n)
-            {
-                combinationCreator = (n - (2 * i)) + i;
-                counter = counter + CalculateCombination(i, combinationCreator);
-            }
-        }
-        return counter;
-    }
-    private static int CalculateCombination(int i, int combinationCreator)
-    {
-        int numerator = 1, denominator = 1;
-        while (i >= 1)
-        {
-            denominator = denominator * i;
-            i--;
-            numerator = numerator * combinationCreator;
-            combinationCreator--;
-        }
-        return numerator / denominator;
-
-    }
-}
+                //write your code here.
 
             }
             catch (Exception)
